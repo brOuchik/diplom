@@ -1,9 +1,0 @@
-.bn-t-728x90
-.ext-links
-.GoogleActiveViewElement
-.GoogleActiveViewInnerContainer
-.reklama
-.video-ads
-.epom-brend
-.bn-idx
-.ytd-display-ad-renderer
