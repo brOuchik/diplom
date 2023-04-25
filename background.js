@@ -1,16 +1,23 @@
-chrome.contextMenus.create({
-    title: "Delete this",
-    id: "Ext",
-    contexts: ["all"]
+class ContextMenu {
+  constructor(title, id, contexts) {
+    this.title = title;
+    this.id = id;
+    this.contexts = contexts;
+    chrome.contextMenus.create({ title, id, contexts });
+    chrome.contextMenus.onClicked.addListener(this.onContextClick);
+  }
 
-  });
+  onContextClick = (info, tab) => {
+    if (info.menuItemId === this.id) {
+        chrome.tabs.sendMessage(tab.id, { task: "addBlockTag"});
+      }
+    
+  }
 
+  remove = () => {
+    chrome.contextMenus.onClicked.removeListener(this.onClick);
+    chrome.contextMenus.remove(this.id);
+  }
+}
 
-chrome.contextMenus.onClicked.addListener(menu => {
-  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, {
-      task: "Delete this"
-    });
-  });
-});
-
+const contextMenu = new ContextMenu("Delete this", "Ext", ["all"]);

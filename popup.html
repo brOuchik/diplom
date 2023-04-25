@@ -8,29 +8,59 @@
     <title>AdTrafficBlocker</title>
     <style>
       body {
-        background-color:  #621414;
+        background-color: #57a554;
+      }
+      #allowBtn, #blockBtn, #blockModeOn, #blockModeOff  #trafficBlockStatusIndicator{
+        text-align: center;
+        font-size: 120%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #ee3030;
+        height: 80px;
+        width: 100px;
+      }
+      #allowBtn img, #blockBtn img, #blockModeOn img, #blockModeOff img {
+        vertical-align: middle;
+      }
+      #blockBtn {
+        display: none;
+      }
+      #blockModeOff {
+        display: none;
       }
     </style>
   </head>
   <body>
     <h1>
       AdTrafficBlocker
-    </h1.>
+    </h1>
     <hr>
     <br>
-    <div id="domain" style="text-align: center;font-size: 70%; ">
+    <div id="trafficBlockStatusIndicator" style="font-size: 200%;text-align: center;">
       Трафик не блокируется
     </div>
     <br>
-    <br>
-    <hr>
-    <div style="text-align: center;">
-    <button  id="allowBtn" style="text-align: center;font-size: 60%;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #000000;height:80px;width:100px;">
-      <img src="cross.jpg" alt="Галочка" 
-      style="vertical-align: middle" width="25" height="25"><br>Отключить на этом сайте</button>
-    <button  id="blockBtn" style="text-align: center;font-size: 60%;font-family: Verdana, Geneva, Tahoma, sans-serif;color: #000000;height:80px;width:100px;display: none">
-      <img src="greentick.webp" alt="Крестик" 
-      style="vertical-align: middle;" width="25" height="25"><br>Включить на этом сайте</button>
-    </div>
+    <div id="domainName" style="text-align: center;font-size: 200%; ">
+</div>
+<div style="text-align: center;">
+  <button id="allowBtn">
+    <img src="cross.jpg" alt="Галочка" width="25" height="25"><br>
+    Отключить на этом сайте
+  </button>
+  <button id="blockBtn">
+    <img src="greentick.webp" alt="Крестик" width="25" height="25"><br>
+    Включить на этом сайте
+  </button>
+</div>
+<hr>
+<div style="text-align: center;" >
+  <button id="blockModeOn" style="display: inline;">
+    <img src="greentick.webp" alt="Крестик" width="25" height="25"><br>
+    Включить режим блокировки
+  </button>
+  <button id="blockModeOff" >
+    <img src="cross.jpg" alt="Крестик" width="25" height="25"><br>
+    Выключить режим блокировки
+  </button>
+</div>
   </body>
 </html>
